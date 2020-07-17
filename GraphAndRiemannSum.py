@@ -52,7 +52,7 @@ def plotRiemannGraph(f=lambda x:3*x+4, xGraphLimits=(0,5), yGraphLimits=None,
     
     plt.figure()
     plt.axis([xGraphLimits[0], xGraphLimits[1], yL, yU])
-    if yL !=0: plt.axhline(y=0, color='k', linestyle='--')
+    if yL !=0: plt.axhline(y=0, color='k', linestyle='--')#Place horizontal line at y=0 when lower bound of figure is not at y=0
     plt.plot(xValsGraph, yValsGraph, 'b')#Color of plot is not an option
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
