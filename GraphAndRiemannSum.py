@@ -52,6 +52,7 @@ def plotRiemannGraph(f=lambda x:3*x+4, xGraphLimits=(0,5), yGraphLimits=None,
     
     plt.figure()
     plt.axis([xGraphLimits[0], xGraphLimits[1], yL, yU])
+    if yL !=0: plt.axhline(y=0, color='k', linestyle='--')
     plt.plot(xValsGraph, yValsGraph, 'b')#Color of plot is not an option
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
@@ -62,7 +63,7 @@ def plotRiemannGraph(f=lambda x:3*x+4, xGraphLimits=(0,5), yGraphLimits=None,
         #Get x-coordinates of all intervals
         xValsBars=np.linspace(BarsLimits[0], BarsLimits[1],nBars+1)
         yValsBars=f(xValsBars)
-        print('Before Filtering',xValsBars,yValsBars)
+
         
         #Filter values depending if left edge or right edge
         if Left:
@@ -73,9 +74,7 @@ def plotRiemannGraph(f=lambda x:3*x+4, xGraphLimits=(0,5), yGraphLimits=None,
             barWidth=xValsBars[0]-xValsBars[1]
             xValsBars=xValsBars[1:]
             yValsBars=yValsBars[1:]
-        print('Afer filtering')
-        print(xValsBars)
-        print(yValsBars)
+
         plt.bar(xValsBars, yValsBars, barWidth, alpha=0.2, align='edge',
                 edgecolor='b')
         
