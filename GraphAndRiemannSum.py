@@ -79,7 +79,7 @@ def plotRiemannGraph(f=lambda x:3*x+4, xGraphLimits=(0,5), yGraphLimits=None,
         plt.bar(xValsBars, yValsBars, barWidth, alpha=0.2, align='edge',
                 edgecolor='b')
         
-        BarsArea=sum(yValsBars*barWidth)
+        BarsArea=sum(yValsBars*abs(barWidth))
     
     plt.show()
     
